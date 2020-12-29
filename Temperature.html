@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+       
+        fieldset{
+        margin:7px 200px ;
+        border:4px solid black;
+        background-color:rgb(81, 41, 224);
+        padding-right:30px;
+        height:140px;
+        box-shadow: 0px 5px 10px yellow;
+
+        }
+        #center{
+        text-align:center;
+        color:blue;
+        }
+        h1{
+        text-align:center;
+        color:#f9fafa;
+        font-size: 50px;
+        }
+        body{
+        background-color: rgb(34, 79, 202);
+        }
+
+        .box1{
+            box-shadow: 0px 5px 10px rgb(121, 24, 212);
+            width:200px;
+            height:20px;
+        }
+        button{
+            width:200px;
+            height:25px;
+            border-radius: 10px;
+            color:rgb(28, 52, 119);
+        }
+        button a:hover{
+            background-color: gray;
+        }
+        .box2{
+            width:200px;
+            height:20px;
+        }
+        .box3{
+            width:200px;
+            height:25px;
+            border-radius: 10px;
+        }
+
+   </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire|neon|outline|emboss|shadow-multiple">
+    
+</head>
+<body>
+    <h1 class="font-effect-neon">Temperature converter</h1>
+    <div id="center">
+        <form class="form2">
+            <fieldset><br>
+               &nbsp&nbsp&nbsp<input type="text" name="celsius" class="box1" placeholder="Enter the celsius value" >
+                <button type="button" name="button" onclick="convert1(this.form)" onmouseover="mOver(this)" onmouseout="mOut(this)" class="font-effect-shadow-multiple">Convert to fahranheit</button>
+                <input type="text" name="fahranheit" placeholder="Your fahranheit Value is" class="box2"  readonly>
+                <input type="reset" value="clear" class="box3" onmouseover="mOver(this)" onmouseout="mOut(this)" >
+        </form><br><br><br>
+        <form class="form1">
+                &nbsp&nbsp<input type="text" name="fahranheit" class="box1" placeholder="Enter the fahranheit value"  >
+                <button type="button" name="button" onclick="convert(this.form)"  onmouseover="mOver(this)" onmouseout="mOut(this)" class="font-effect-shadow-multiple">Convert to Celsius</button>
+                <input type="text" name="celsius" placeholder="Your celsius Value is" class="box2"  readonly>
+                <input type="reset" value="clear" class="box3"  onmouseover="mOver(this)" onmouseout="mOut(this)"><br>
+            </fieldset>
+        </div>
+        </form>
+<script>
+            
+    function convert1 (form){
+        var f=form.fahranheit;
+        var c=form.celsius;
+        f.value=parseFloat((c.value*1.8)+32).toFixed(2);
+    
+    
+    }
+    function convert (form){
+        var f=form.fahranheit;
+        var c=form.celsius;
+        c.value=parseFloat((f.value-32)/1.8).toFixed(2);
+    
+    }
+    function mOver(th){
+    
+        th.style.backgroundColor="yellow";
+    }
+    function mOut(th){
+    
+        th.style.backgroundColor="white";
+    }
+</script>
+
+</body>
+</html>
