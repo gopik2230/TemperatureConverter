@@ -61,13 +61,13 @@
     <div id="center">
         <form class="form2">
             <fieldset><br>
-               &nbsp&nbsp&nbsp<input type="text" name="celsius" class="box1" placeholder="Enter the celsius value" >
+               &nbsp&nbsp&nbsp<input type="text" name="celsius" class="box1" onfocus="Focus(this)" onfocusout="Focusout(this)" placeholder="Enter the celsius value" >
                 <button type="button" name="button" onclick="convert1(this.form)" onmouseover="mOver(this)" onmouseout="mOut(this)" class="font-effect-shadow-multiple">Convert to fahranheit</button>
                 <input type="text" name="fahranheit" placeholder="Your fahranheit Value is" class="box2"  readonly>
                 <input type="reset" value="clear" class="box3" onmouseover="mOver(this)" onmouseout="mOut(this)" >
         </form><br><br><br>
         <form class="form1">
-                &nbsp&nbsp<input type="text" name="fahranheit" class="box1" placeholder="Enter the fahranheit value"  >
+                &nbsp&nbsp<input type="text" name="fahranheit" class="box1"  onfocus="Focus(this)" onfocusout="Focusout(this)" placeholder="Enter the fahranheit value"  >
                 <button type="button" name="button" onclick="convert(this.form)"  onmouseover="mOver(this)" onmouseout="mOut(this)" class="font-effect-shadow-multiple">Convert to Celsius</button>
                 <input type="text" name="celsius" placeholder="Your celsius Value is" class="box2"  readonly>
                 <input type="reset" value="clear" class="box3"  onmouseover="mOver(this)" onmouseout="mOut(this)"><br>
@@ -91,11 +91,17 @@
     }
     function mOver(th){
     
-        th.style.backgroundColor="yellow";
+        th.style.backgroundColor="rgb(102, 255, 153)";
     }
     function mOut(th){
     
         th.style.backgroundColor="white";
+    }
+    function Focus(x){
+        x.style.backgroundColor="Yellow";
+    }
+    function Focusout(x){
+        x.style.backgroundColor="white";
     }
 </script>
 
